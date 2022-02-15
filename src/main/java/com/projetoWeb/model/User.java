@@ -12,7 +12,7 @@ import lombok.NoArgsConstructor;
 public class User {
     UUID id;
     String nome;
-    String email;
+    String email;  
 
 
 
