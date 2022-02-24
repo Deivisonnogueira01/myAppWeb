@@ -1,9 +1,9 @@
-package com.projetoWeb.services;
+package com.projetoWeb.myApp.services;
 
 import java.util.List;
 
-import com.projetoWeb.model.User;
-import com.projetoWeb.repositories.UserRepository;
+import com.projetoWeb.myApp.model.User;
+import com.projetoWeb.myApp.repositories.UserRepository;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
