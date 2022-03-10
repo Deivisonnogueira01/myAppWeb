@@ -16,9 +16,17 @@ public class UserService {
 
     public List<User> getUser() {
 
-
         return this.userRepository.findAll();
     };
 
+    //public String products(User user){
+      //  return this.userRepository.save();
+    //} 
+
+
     
 }
+
+//Fontes
+//thymeleaf value=
+//boostrap para formulario
