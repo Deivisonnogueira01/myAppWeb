@@ -30,7 +30,7 @@ public class Produto {
 
     @Column(name = "nameProduto", nullable=false)
     @NotBlank
-    private String name;
+    private String nameProduto;
 
     @Column(name = "quantidade", nullable=false)
     @NotBlank
