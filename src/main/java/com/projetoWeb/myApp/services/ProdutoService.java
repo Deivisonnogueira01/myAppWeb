@@ -16,7 +16,7 @@ public class ProdutoService {
 
    public List<Produto> GetProduto(){
        return  this.repository.findAll();
-   }
+   };
 
    public void Salvar(Produto produto){
        this.repository.save(produto);
