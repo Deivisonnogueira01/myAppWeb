@@ -1,6 +1,7 @@
 package com.projetoWeb.myApp.services;
 
 import java.util.List;
+import java.util.UUID;
 
 import com.projetoWeb.myApp.model.User;
 
@@ -23,5 +24,8 @@ public class UserService {
     } 
 
 
+   public void DeletarUser( UUID id){
+     this.userRepository.deleteById(id);
+   }
     
 }

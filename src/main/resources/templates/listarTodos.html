@@ -23,6 +23,12 @@
     </li>
   </ul>
     
+  <form 
+  th:action = "@{/users/listarTodos}"
+  action="#"
+  th:object = "${userObj}"
+  method="delete"> >
+
     <table class="table">
         <thead>
           <tr>
@@ -34,14 +40,20 @@
         <tbody>
           <tr th:each="user: ${usersList}">
             <td th:text="${user.id}" />
-            <td th:text="${user.nome}" />
+            <td th:text="${user.nome}" /> 
+
             <td th:text="${user.email}" />
+            <td> <button type="button" class="btn btn-danger"> <a>Excluir</a>  </button> </td>
           </tr>
         </tbody>
     
-      </table>
 
-     
+      </table>
+<!--
+      <div class="col-auto">
+        <button type="hidden" value="delete" class="btn btn-primary mb-2">Deletar</button>
+      </div>  -->
+  </form>
 
 </body>
 </html>

@@ -1,14 +1,17 @@
 package com.projetoWeb.myApp.controller;
 
 import java.util.List;
+import java.util.UUID;
 
 import javax.validation.Valid;
 
 import com.projetoWeb.myApp.model.User;
 import com.projetoWeb.myApp.services.UserService;
 
+import org.hibernate.query.criteria.internal.predicate.IsEmptyPredicate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.BindingResult;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,10 +21,10 @@ import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
 @RestController
-@RequestMapping("/users")
+@RequestMapping("/users") 
 public class UserController {
 
-    @Autowired
+    @Autowired 
     private UserService service;
 
     @GetMapping("/listar")
@@ -49,7 +52,7 @@ public class UserController {
 
     }
 
-    @PostMapping("/saveUser")
+    @PostMapping("/saveUser") 
     public ModelAndView salvarUsuario(@ModelAttribute @Valid User user, BindingResult result,
             RedirectAttributes redirect) {
         if (result.hasErrors()) {
@@ -58,6 +61,18 @@ public class UserController {
         service.SalvarUser(user);
         return new ModelAndView("redirect:/users/listarTodos");
 
-    }
+    } 
 
-}
+
+    @DeleteMapping(value = "{id}") 
+    public ModelAndView deletarUsuario(@ModelAttribute UUID id, BindingResult result,
+    RedirectAttributes redirect){
+        
+        if(result.hasErrors()){
+             return new ModelAndView("redirect erro");
+         }
+         service.DeletarUser(id);
+         return new ModelAndView("redirect");
+    }
+} 
+
