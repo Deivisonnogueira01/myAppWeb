@@ -14,36 +14,28 @@
   <body>
       
         <form
-        th:action = "@{/produtos/saveProdutos}"
+        th:action= "@{/produtos/saveProdutos}"
         action="#"
-        th:object = "${prodObj}"
+        th:object= "${prodObj}" 
         method="post">
-            
           
-          <div class="form-groupe">
             Nome Do Produto : 
             <input type="text" class="form-control" th:field="*{nameProduto}"  placeholder="">
-          </div>
-
-          <div class="form-groupe">
+         
             Preço : 
             <input type="text" class="form-control" th:field="*{preco}"  placeholder="">
-          </div>
-
-          <div class="form-groupe">
+        
             Quantidade : 
             <input type="text" class="form-control" th:field="*{quantidade}"  placeholder="">
-          </div>
-
-          <div class="form-groupe">
+       
             Marca do Produto :
-              <input type="text" class="form-control" th:field="*{marcaProduto}"  placeholder="">
-          </div>
-
-          <div class="col-autoo">
-              <button type="submit" class="btn btn-primary mb-2">Enviar</button>
-              <button type="reset"  class="btn btn-warning mb-2">Cancelar</button>
-          </div>
+              <input type="text" class="form-control" th:field="*{marca}"  placeholder="">
+        
+         <div>
+          <button type="submit" class="btn btn-primary mb-2">Enviar</button>
+          <button type="reset"  class="btn btn-warning mb-2">Cancelar</button>
+         </div>
+              
 
         </form>
 

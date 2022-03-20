@@ -5,7 +5,7 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
-import com.crud_frame.frame.model.User; 
+import com.crud_frame.frame.model.User;
 import com.crud_frame.frame.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -29,7 +29,6 @@ public class UserController {
     @GetMapping("/listar")
     public String getUser() {
         return "usuario Localizado";
-
     }
 
  
@@ -61,22 +60,33 @@ public class UserController {
         return new ModelAndView("redirect:/users/listarTodos");
 
     }
-
+/*
     @GetMapping(value = "/delete")
+    public String deletaUser(@PathVariable("id") UUID id){
+        Optional<User> userOpt = service.DeletarUser(id);
+        if(userOpt.isEmpty()){
+            throw new IllegalArgumentException("Impossivel Deletar");
+        }
+        service.DeletarUser(userOpt.get());
+        return "redirect/users/";
+        
+    }*/
+
+    @GetMapping("/delete")
     public ModelAndView delete() {
         ModelAndView mv = new ModelAndView("listarTodos");
-        mv.addObject("userObj");
+        mv.addObject("userDelete"); 
         return mv;
-    }
+    }  
 
     @DeleteMapping(value = "{id}")
     public ModelAndView deletarUsuario(@ModelAttribute UUID id, BindingResult result,
             RedirectAttributes redirect) {
 
-        if (result.hasErrors()) {
+        if (result.hasErrors()) { 
             return new ModelAndView("redirect erro");
         }
         service.DeletarUser(id);
         return new ModelAndView("redirect:/users/listarTodos");
-    }
+    } 
 }

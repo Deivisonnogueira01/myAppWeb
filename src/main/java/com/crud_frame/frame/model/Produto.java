@@ -26,7 +26,7 @@ public class Produto {
 
     @Column(name = "precoProduto", nullable=false)
     @NotBlank
-    private Double  preco;
+    private String  preco;
 
     @Column(name = "nameProduto", nullable=false)
     @NotBlank

@@ -33,6 +33,7 @@
                 <th scope="col">Nome</th>
                 <th scope="col">Quantidade</th>
                 <th scope="col">Marca</th>
+                
               </tr>
             </thead>
             <tbody>
@@ -41,9 +42,10 @@
                 <td th:text="${produto.preco}" />
                 <td th:text="${produto.nameProduto}" />
                 <td th:text="${produto.quantidade}"/>
-                <td th:text="${produto.marcaProduto}" />
-
-                <td> <button type="button" class="btn btn-danger"> <a>Excluir</a>  </button> </td>
+                <td th:text="${produto.marca}" />
+                <td> <button type="button" class="btn btn-danger">Excluir</button> </td>
+                <td> <button type="button" class="btn btn-primary">Editar</button> </td> 
+                
               </tr>
             </tbody>
         
