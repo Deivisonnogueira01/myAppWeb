@@ -39,4 +39,6 @@ public class Produto {
     @Column(name = "marcaProduto")
     private  String marca;  
 
+
+    
 }

@@ -5,7 +5,7 @@ import java.util.UUID;
 
 import javax.validation.Valid;
 
-import com.crud_frame.frame.model.User;
+import com.crud_frame.frame.model.User; 
 import com.crud_frame.frame.services.UserService;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -77,6 +77,6 @@ public class UserController {
             return new ModelAndView("redirect erro");
         }
         service.DeletarUser(id);
-        return new ModelAndView("redirect");
+        return new ModelAndView("redirect:/users/listarTodos");
     }
 }
