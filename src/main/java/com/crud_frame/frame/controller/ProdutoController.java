@@ -20,7 +20,7 @@ import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 @RequestMapping("/produtos")
 public class ProdutoController {
 
-    @Autowired
+    @Autowired 
     ProdutoService service;
 
     @GetMapping
@@ -29,23 +29,31 @@ public class ProdutoController {
 
     }
 
+    @GetMapping("/newProdutos")
+    public ModelAndView novoProduto() {
+        ModelAndView mv = new ModelAndView("formularioProdutos");
+        Produto produto = new Produto();
+        mv.addObject("prodObj", produto);
+        return mv;
+    }
+ 
     @GetMapping("/listarTodosProdutos")
     public ModelAndView listarTodosProdutos() {
         ModelAndView mv = new ModelAndView("listarProdutos");
 
         List<Produto> produtos = this.service.GetProduto();
         mv.addObject("ProductList", produtos);
-        return mv;
+        return mv; 
 
     }
 
-    @PostMapping("/save")
+    @PostMapping("/saveProdutos")
     public ModelAndView salvarProduto(@Valid Produto produto, BindingResult result, RedirectAttributes redirect) {
         if (result.hasErrors()) {
             return new ModelAndView("redirect erro");
         }
         service.Salvar(produto);
-        return new ModelAndView("Redirect:ok");
+        return new ModelAndView("Redirect:/produtos/listarTodosProdutos");
     }
 
 }

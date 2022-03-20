@@ -2,7 +2,7 @@ package com.crud_frame.frame.services;
 
 
 import java.util.List;
-
+import java.util.UUID;
 import com.crud_frame.frame.model.User;
 //import com.crud_frame.frame.repositories.UserRepository;
 import com.crud_frame.frame.repositories.UserRepository;
@@ -26,7 +26,9 @@ public class UserService {
     } 
 
 
-    
+    public void DeletarUser(UUID id){
+      this.userRepository.deleteById(id);
+    }
 }
 
 //Fontes

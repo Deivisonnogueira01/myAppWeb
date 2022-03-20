@@ -18,16 +18,16 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class User {
-    
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     UUID id;
 
-    @Column(name = "nomeUser", nullable=false)
+    @Column(name = "nomeUser", nullable = false)
     @NotBlank
     String nome;
 
     @Column(name = "emailUser")
-    String email;  
+    String email;
 
 }
