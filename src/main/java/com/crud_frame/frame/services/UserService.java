@@ -29,6 +29,10 @@ public class UserService {
     public void DeletarUser(UUID id){
       this.userRepository.deleteById(id);
     }
+
+    public void get(UUID id) {
+        this.userRepository.findById(id);
+    }
 }
 
 //Fontes

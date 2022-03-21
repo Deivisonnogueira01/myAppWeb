@@ -23,13 +23,13 @@
     </li>
   </ul>
     
-  <form >
+  <form 
   
-    <form
-    th:action = "@{/users/{id}}"
-    action="#"
-    th:object = "${userDelete}"
-    method="delete">
+    
+    
+  >
+
+
 
     <table class="table">
         <thead>
@@ -45,11 +45,21 @@
             <td th:text="${user.nome}" /> 
 
             <td th:text="${user.email}" />
-           <td> <button type="button" class="btn btn-danger"> Excluir  </button> </td>
-           <td> <button type="button" class="btn btn-primary"> Editar </button> </td>      
+           <td> <button type="button" class="btn btn-danger"> <a  
+            th:action = "@{/users/{id}}"
+            action="#"
+            th:object = "${userDelete}"
+            method="delete">Excluir</a></button> </td>
+
+           <td> <button type="button" class="btn btn-primary"><a 
+            th:action = "@{/users/edit"
+            action="#"
+            th:object = "${editUser}"
+            method="put">Editar</a></button> </td>      
           </tr>
         </tbody>
-    
+        
+
 
       </table>
   </form>

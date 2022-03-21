@@ -43,8 +43,11 @@
                 <td th:text="${produto.nameProduto}" />
                 <td th:text="${produto.quantidade}"/>
                 <td th:text="${produto.marca}" />
-                <td> <button type="button" class="btn btn-danger">Excluir</button> </td>
-                <td> <button type="button" class="btn btn-primary">Editar</button> </td> 
+                <td> <button type="button" class="btn btn-danger"> <a>Excluir</a></button> </td>
+                <td> <button type="button" class="btn btn-primary"> <a  th:action = "@{/users/delete}"
+                  action="#"
+                  th:object = "${userDelete}"
+                  method="delete">Editar</a></button> </td> 
                 
               </tr>
             </tbody>
