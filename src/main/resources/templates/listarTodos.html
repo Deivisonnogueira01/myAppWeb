@@ -15,20 +15,18 @@
 
   <ul class="nav nav-tabs">
     <li class="nav-item">
-      <a class="nav-link active" href="/users/newUser">Menu</a>
+      <a class="nav-link active" href="/users/newUser">Cadastro</a>
     </li>
     
     <li class="nav-item">
-      <a class="nav-link disabled" href="/produtos/listarTodosProdutos">Listagem</a>
+      <a class="nav-link disabled" href="/produtos/listarTodosProdutos">Produtos</a>
     </li>
   </ul>
     
   <form 
-  th:action = "@{/users/listarTodos}"
-  action="#"
-  th:object = "${userObj}"
-  method="delete"> >
 
+    
+  >
     <table class="table">
         <thead>
           <tr>
@@ -38,22 +36,27 @@
           </tr>
         </thead>
         <tbody>
-          <tr th:each="user: ${usersList}">
+          <tr th:each="user:${usersList}">
             <td th:text="${user.id}" />
             <td th:text="${user.nome}" /> 
-
             <td th:text="${user.email}" />
-            <td> <button type="button" class="btn btn-danger"> <a>Excluir</a>  </button> </td>
+
+           <td> <button type="button" class="btn btn-danger"> <a  
+            th:action = "@{/users/{id}}"
+            action="#"
+            th:object = "${userDelete}"
+            method="delete">Excluir</a></button> </td>
+
+           <td> <button type="button" class="btn btn-primary"><a> Editar </a> </button> </td>      
           </tr>
         </tbody>
-    
+        
+
 
       </table>
-<!--
-      <div class="col-auto">
-        <button type="hidden" value="delete" class="btn btn-primary mb-2">Deletar</button>
-      </div>  -->
   </form>
 
 </body>
 </html>
+
+ 

@@ -7,16 +7,17 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+
 import javax.validation.constraints.NotBlank;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Entity
 public class Produto {
     
     @Id
@@ -25,17 +26,19 @@ public class Produto {
 
     @Column(name = "precoProduto", nullable=false)
     @NotBlank
-    private Double  preco;
+    private String  preco;
 
     @Column(name = "nameProduto", nullable=false)
     @NotBlank
-    private String name;
+    private String nameProduto;
 
     @Column(name = "quantidade", nullable=false)
     @NotBlank
     private String quantidade;
 
     @Column(name = "marcaProduto")
-    String marca;  
+    private  String marca;  
 
+
+    
 }
