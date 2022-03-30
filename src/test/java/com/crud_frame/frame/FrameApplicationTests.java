@@ -1,10 +1,10 @@
-package com.web.frame.project_web;
+package com.crud_frame.frame;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
-class ProjectWebApplicationTests {
+class FrameApplicationTests {
 
 	@Test
 	void contextLoads() {

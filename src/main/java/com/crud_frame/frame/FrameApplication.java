@@ -1,13 +1,13 @@
-package com.web.frame.project_web;
+package com.crud_frame.frame;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 
 @SpringBootApplication
-public class ProjectWebApplication {
+public class FrameApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(ProjectWebApplication.class, args);
+		SpringApplication.run(FrameApplication.class, args);
 	}
 
 }
